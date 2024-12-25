@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+<h4 align="center">Timings: 7:30pm to 22:00 pm</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"> Item No</th>
+      <th scope="col"> Item</th>
+      <th scope="col"> Price</th>
+      <th scope="col"> Select </th>
+    </tr>
+    <tbody>
+    {% for i in vegd %}
+    <tr>
+      <th scope="row"></th>
+      <td>{{ i.Item }}</td>
+      <td>{{ i.Price }}</td>
+      <td><a href="">Select</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </thead>
+  </table>
+{% endblock %}

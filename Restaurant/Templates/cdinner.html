@@ -1,0 +1,51 @@
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+<h4 align="center">Timings: 7:30pm to 22:00 pm
+</h4>
+<h4 align="center">Vegetarian Menu</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Item No</th>
+      <th scope="col">Item</th>
+      <th scope="col">Price</th>
+      <th scope="col">Select</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in vd %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th> <!-- This provides a sequential item number -->
+      <td>{{ i.Item }}</td>
+      <td>{{ i.Price }}</td>
+      <td><a href="">Select</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h4 align="center">Non-Vegetarian Menu</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Item No</th>
+      <th scope="col">Item</th>
+      <th scope="col">Price</th>
+      <th scope="col">Select</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in cnd %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th> <!-- This provides a sequential item number -->
+      <td>{{ i.Item }}</td>
+      <td>{{ i.Price }}</td>
+      <td><a href="">Select</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}

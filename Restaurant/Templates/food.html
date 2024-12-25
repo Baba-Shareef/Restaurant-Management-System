@@ -1,0 +1,42 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col">
+      <a href="{% url 'veg' %}">
+        <img src="{% static 'img.png' %}" width="400" height="300" alt=""style="padding: 20px;">
+        <h4>Vegetarian Menu</h4>
+      </a>
+    </div>
+    <div class="col">
+      <a href="{% url 'nonveg' %}">
+       <img src="{% static 'img_1.png' %}"  width="400" height="300" alt="Image 2"style="padding: 20px;">
+        <h4>Non-Vegetarian Menu</h4>
+      </a>
+    </div>
+    <div class="col">
+      <a href="https://example.com/link3">
+        <img src="{% static 'img_2.png' %}"
+             width="400" height="300" alt="Image 3" style="padding: 20px;">
+        <h4>COOL DRINKS</h4>
+      </a>
+    </div>
+    <div class="col border-div" >
+      <a href="https://example.com/link4">
+        <div class="image-container">
+          <img src="{% static 'img_3.png' %}" width="400" height="300" alt="Image 4"style="padding: 20px;">
+        </div>
+        <h4 align="center">DESSERTS</h4>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
