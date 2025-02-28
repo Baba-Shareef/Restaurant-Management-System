@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+{% block title %}Courses{% endblock title %}
+{% block content %}
+<h1>wel come to courses</h1>
+<table class="table table-dark table-sm">
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Professor</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Credits</th>
+            <th>Enroll</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for course in courses %}
+        <tr>
+            <td>{{ course.Subject }}</td>
+            <td>{{ course.Professor }}</td>
+            <td>{{ course.Day }}</td>
+            <td>{{ course.Time }}</td>
+            <td>{{ course.Credits }}</td>
+            <td><button type="button" class="btn btn-outline-success"><a href="{% url 'enroll' course.id  %}" style="color:white;text-decoration: none;">Enroll</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

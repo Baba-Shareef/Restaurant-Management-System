@@ -1,0 +1,24 @@
+{% extends 'home.html' %}
+{% block title %}RegisteredCourses{% endblock title %}
+{% block content %}
+  <table class="table table-dark table-sm">
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Professor</th>
+            <th>Credits</th>
+            <th>Unenroll</th>
+        </tr>
+    </thead>
+      <tbody>
+      {% for  subject in subjects %}
+      <tr>
+          <td>{{ subject.Subject}}</td>
+          <td>{{ subject.Professor }}</td>
+          <td>{{ subject.Credits }}</td>
+          <td><button type="button" class="btn btn-outline-danger"><a href="{% url 'Unroll' subject.id  %}" style="color:white;text-decoration: none;">Unenroll</a></button></td>
+      </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+      {% endblock content %}
